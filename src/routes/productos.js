@@ -3,7 +3,7 @@ const router = express.Router();
 const mysqlConnection = require('../database');
 /*------------------------------------------MODULO HOME-------------------------------------------------- */
 router.get('/',(req,res) => {  //peticion get para pedir los productos
-    mysqlConnection.query('SELECT * FROM productos  INNER JOIN tipoproducto ON productos.tipo = tipoproducto.idcategoria order by id desc',(err, rows,fields) => {
+    mysqlConnection.query('SELECT * FROM producto',(err, rows,fields) => {
         if (!err){
             res.json(rows);
         }else{
